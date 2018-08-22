@@ -57,23 +57,28 @@ const isVowel = ch => {
  * return the string "tothohisos isos fofunon".
  */
 
-// const rovarspraket = word => {
-//   let consonant = [];
-//   let newWord = [];
-//   console.log(!isVowel(word));
-//   if (!isVowel(word) === true) {
-//   //   consonant = word.split("");
-//   //   // console.log(!isVowel(word));
-//   //   consonant.forEach(letter => {
-//   //     newWord.push(consonant[letter] + "o" + consonant[letter]);
-//     // });
-//   //   // console.log(newWord);
-//   //   return newWord.join("");
-//     return word;
-//   } else {
-//     return word;
-//   // }
-// };
+const rovarspraket = word => {
+  let consonant = "";
+  let newWord = [];
+  if (typeof word !== "string") {
+    return word.toString();
+  } else {
+    newWord = word.split("");
+    //dbg msg
+    console.log(newWord);
+    // for (let index = 0; index < newWord.length; index++) {
+    newWord.forEach(index => {
+      if (!isVowel(newWord[index])) {
+        return (consonant += newWord[index] + "o" + newWord[index]);
+      } else {
+        consonant += newWord[index];
+        //dbg msg
+        console.log(consonant);
+        return consonant;
+      }
+    });
+  }
+};
 
 /**
  * Write a function rovarspraket() that will translate
