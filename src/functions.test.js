@@ -44,12 +44,36 @@ const sumOfArray = array => {
  * and returns true if it is a vowel, false otherwise.
  */
 
-const isVowel = (char) => {
-  let ch = char.toLowerCase();
-  if (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u') {
-    return true;
-  } else return false;
-}
+const isVowel = ch => {
+  return typeof ch === "string" && "aeiou".indexOf(ch.toLowerCase()) !== -1;
+};
+
+/**
+ * Write a function rovarspraket() that will translate
+ * a text into a "rövarspråket". That is, double every
+ * consonant and place an occurrence of "o" in between.
+ *
+ * For example, rovarspraket("this is fun") should
+ * return the string "tothohisos isos fofunon".
+ */
+
+// const rovarspraket = word => {
+//   let consonant = [];
+//   let newWord = [];
+//   console.log(!isVowel(word));
+//   if (!isVowel(word) === true) {
+//   //   consonant = word.split("");
+//   //   // console.log(!isVowel(word));
+//   //   consonant.forEach(letter => {
+//   //     newWord.push(consonant[letter] + "o" + consonant[letter]);
+//     // });
+//   //   // console.log(newWord);
+//   //   return newWord.join("");
+//     return word;
+//   } else {
+//     return word;
+//   // }
+// };
 
 /**
  * Write a function rovarspraket() that will translate
