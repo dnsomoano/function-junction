@@ -58,47 +58,40 @@ const isVowel = ch => {
  */
 
 const rovarspraket = word => {
-  let consonant = "";
-  let newWord = [];
+  let consonant = [];
+  let wordArr = [];
   if (typeof word !== "string") {
     return word.toString();
   } else {
-    newWord = word.split("");
+    wordArr = word.split("");
     //dbg msg
-    console.log(newWord);
-    // for (let index = 0; index < newWord.length; index++) {
-    newWord.forEach(index => {
-      if (!isVowel(newWord[index])) {
-        return (consonant += newWord[index] + "o" + newWord[index]);
-      } else {
-        consonant += newWord[index];
-        //dbg msg
-        console.log(consonant);
-        return consonant;
-      }
-    });
+    console.log("split works", wordArr);
   }
+  for (let i = 0; i < wordArr.length; i++) {
+    if (!isVowel(wordArr[i])) {
+      consonant.push(wordArr[i] + "o" + wordArr[i]);
+      // dbg msg
+      console.log("creates consonant", consonant);
+    } else {
+      consonant.push(wordArr[i]);
+      //dbg msg
+      console.log("the word reassembles", consonant);
+    }
+    console.log("the word reassembles", consonant);
+  }
+  return consonant.join("");
 };
-
-/**
- * Write a function rovarspraket() that will translate
- * a text into a "rövarspråket". That is, double every
- * consonant and place an occurrence of "o" in between.
- *
- * For example, rovarspraket("this is fun") should
- * return the string "tothohisos isos fofunon".
- */
-
-// ...
-
-/**
- * Define a function reverse() that computes
- * the reversal of a string. For example,
- * reverse("skoob") should return the
- * string "books".
- */
-
-// ...
+// wordArr.forEach(index => {
+//   if (!isVowel(wordArr[index])) {
+//     consonant += wordArr[index] + "o" + wordArr[index];
+//     return consonant;
+//   } else {
+//     consonant += wordArr[index];
+//     //dbg msg
+//     console.log("the word reassembles", consonant);
+//     return consonant;
+//   }
+// });
 
 /**
  * Write a function findLongestWord() that takes an
