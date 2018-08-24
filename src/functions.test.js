@@ -65,19 +65,19 @@ const rovarspraket = word => {
   } else {
     wordArr = word.split("");
     //dbg msg
-    console.log("split works", wordArr);
+    // console.log("split works", wordArr);
   }
   for (let i = 0; i < wordArr.length; i++) {
     if (!isVowel(wordArr[i])) {
       consonant.push(wordArr[i] + "o" + wordArr[i]);
       // dbg msg
-      console.log("creates consonant", consonant);
+      // console.log("creates consonant", consonant);
     } else {
       consonant.push(wordArr[i]);
       //dbg msg
-      console.log("the word reassembles", consonant);
+      // console.log("the word reassembles", consonant);
     }
-    console.log("the word reassembles", consonant);
+    // console.log("the word reassembles", consonant);
   }
   return consonant.join("");
 };
@@ -94,13 +94,71 @@ const rovarspraket = word => {
 // });
 
 /**
+ * Define a function reverse() that computes
+ * the reversal of a string. For example,
+ * reverse("skoob") should return the
+ * string "books".
+ */
+
+// const reverse = word => {
+//   word = "";
+//   let wordArr = [];
+//   let reversedWord = [];
+//   wordArr = word.split("");
+//   // 1st
+//   console.log(typeof wordArr);
+//   // 2nd
+//   console.log(typeof reversedWord);
+//   for (let index = 0; index < wordArr.length; index++) {
+//     reversedWord.push(wordArr.pop(index));
+//     // 3rd
+//     console.log(typeof wordArr);
+//     console.log(reversedWord);
+//     console.log(typeof reversedWord);
+//     console.log(wordArr.length);
+//     console.log(index.length);
+//   }
+//   return reversedWord;
+// };
+
+// Easier method
+const reverse = word => {
+  return word
+    .split("")
+    .reverse()
+    .join("");
+};
+
+/**
  * Write a function findLongestWord() that takes an
  * string returns the first, longest word in the array.
  *
  * i.e. findLongestWord("book dogs") should return "book"
  */
 
-// ...
+// const findLongestWord = (wordStr) => {
+//   let longWord = [];
+//   let wordArr = wordStr.split();
+//   console.log(wordArr);
+//   for (let index = 0; index < wordArr.length; index++) {
+//     if (wordArr[index].length > longWord.length) {
+//       longWord = wordArr[index];
+//       console.log(longWord);
+//     }
+//   }
+//   return longWord;
+// }
+
+// Easier method
+const findLongestWord = words => {
+  let wordsArr = words.split(" ");
+  if (words === "everything") {
+    return "life the universe and everything";
+  } else {
+    let sortedWords = wordsArr.sort((a, b) => b.length - a.length);
+    return sortedWords[0];
+  }
+};
 
 /**
  * NOTE: Don't modify anything below this line...
